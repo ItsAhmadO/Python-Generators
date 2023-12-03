@@ -1,0 +1,43 @@
+#generators square numbers
+def gensquares(N): 
+  for i in range(N):
+    yield i**2
+for x in gensquares(10)
+    print(x)
+
+#generates fibonacci sequecne
+def fibonacci(n):
+  a = 1
+  b = 1
+  for i in range(n):
+    yield a + b
+    a, b = b, a+b
+print(list(fibonacci(5)))
+
+#yields random numbers between inputted low number and high number, n times
+import random
+
+    def rand_num(low, high, n):
+        for i in range(n):
+            yield random.randint(low, high)
+
+    for num in rand_num(1, 10, 12):
+        print(num)
+
+#this allows s to be iterated over, even though it was just a string
+s = 'hello'
+s = iter(s)
+print(next(s))
+
+#this actually creates my_list to be iterated over, makes it easier, it will out 4,5 as these are the values that are > 3
+my_list = [1,2,3,4,5]
+
+gencomp = (item for item in my_list if item > 3)
+
+for item in gencomp:
+    print(item)
+
+
+
+
+
